@@ -1,22 +1,172 @@
+html, body, #root {
+    height:100%;
+    background-color: lightgray;
+}
+
+.header {
+  display: flex;
+  background-color: lightgray;
+  border-top: 3px solid white;
+  border-left: 3px solid white;
+  border-right: 3px solid white;
+  overflow: hidden;
+}
+
+.headerText{
+  z-index: 2;
+  position: absolute;
+  padding: 45px 0 0 25px;
+}
+
+.foam, .foam:after, .foam:before{
+  background: #f2f9fe;
+}
+
+.foam:after, .foam:before{
+  content:'';
+  display: flex;
+  position: absolute;
+	width:100%;
+  height: 100%;
+  top: 0px;
+  z-index: 1;
+  border-top-left-radius: 100px;
+  border-top-right-radius: 100px;
+  border-bottom-color: transparent;
+  border-left-color: transparent;
+}
+
+.foam{
+	width: 20%;
+	height: 120px;
+	position: relative;
+	margin: 20px auto 0px;
+	border-radius: 100px 100px 0 0;
+}
+
+.foam:after {
+  left: 50%;
+}
+
+.foam:before {
+  right: 72%;
+}
+
 .App {
+  margin: 20px auto 0 auto;
+  background: gold;
+  width: 1000px;
+}
+
+ .randomButton {
+   margin: 0 auto;
+   display: block;
+   color: lightcyan;
+   background: cornflowerblue;
+   border-radius: 5px;
+   border: none;
+ }
+
+ .randomButton:hover {
+   color: white;
+ }
+
+.beerTitle{
+  margin-top: 0px;
+}
+
+.beerImg, .beerDetails {
+  float: left;
+  padding: 5%;
+}
+
+.beerImg {
+  width: 20%;
+}
+
+.beerDetails{
+  width:  60%;
+  text-align: left;
+}
+
+.clear {
+  clear: both;
+}
+
+.breweryTitle{
+  margin: 25px auto;
+  display: table;
+}
+
+.breweryContainer {
+  display: flex;
+  flex-wrap: wrap;
+  background-color: gold;
+}
+
+.breweryInfo {
+  float: left;
+  flex-grow: 1;
+  padding:20px;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
+.loader {
+  border: 16px solid #f3f3f3;
+  border-top: 16px solid #3498db;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  display: inline-block;
+  animation: spin 2s linear infinite;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
 }
 
-.App-link {
-  color: #09d3ac;
+.beerPage, .breweryPage {
+  border-left: 3px solid white;
+  border-right: 3px solid white;
+  padding-top: 20px;
+}
+
+.pageLink {
+  color: blue;
+  cursor: pointer;
+  padding-top: 20px;
+  display: block;
+}
+
+.pageLink:hover {
+  color: darkblue;
+}
+
+.backLink {
+  padding-left: 25px;
+}
+
+@media screen and (max-width: 1024px) {
+  .App {
+    width: 720px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .App {
+    width: 440px;
+  }
+
+  .beerImg, .beerDetails {
+    width: 90%!important;
+    padding: 5%!important;
+  }
+
+}
+
+@media screen and (max-width: 480px) {
+  .App {
+    width: 85%;
+  }
 }
